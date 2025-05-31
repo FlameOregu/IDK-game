@@ -1,7 +1,7 @@
-[gd_scene load_steps=26 format=3 uid="uid://ch7py5sawf6io"]
+[gd_scene load_steps=27 format=3 uid="uid://ch7py5sawf6io"]
 
 [ext_resource type="Texture2D" uid="uid://bintrhqcs0vht" path="res://Assets/Character Sprite.png" id="1_bjknd"]
-[ext_resource type="Script" path="res://Scripts/character.gd" id="1_pmi7q"]
+[ext_resource type="Script" uid="uid://b6inqyvq6x40g" path="res://Scripts/character.gd" id="1_pmi7q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2vhrk"]
 atlas = ExtResource("1_bjknd")
@@ -161,6 +161,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7sq6t"]
 size = Vector2(15.8236, 14.4748)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_63s4t"]
+size = Vector2(30.8506, 30.4627)
+
 [node name="Character" type="CharacterBody2D"]
 position = Vector2(0, -12)
 scale = Vector2(0.758361, 0.75994)
@@ -175,3 +178,13 @@ frame_progress = 0.404075
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2.3579e-07, 8.55331)
 shape = SubResource("RectangleShape2D_7sq6t")
+
+[node name="InteractionRadius" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionRadius"]
+position = Vector2(-1.19209e-07, 1.19209e-07)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_63s4t")
