@@ -20,4 +20,3 @@ func _battle_roller():
 	if is_moving == true:
 		if randi_range(1,6) == 6:
 			print("Battle Commence")
-		print("checked")
